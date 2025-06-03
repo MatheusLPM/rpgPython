@@ -21,9 +21,9 @@ def menuPrincipal():
     print('===== MENU PRINCIPAL =====')
     print("[0] - Sair")
     print("[1] - Criar Personagem")
-    print("[2] - Gerenciar Jogo")
     if personagens:
         print("[2] - Gerenciar Personagem")
+    print("[3] - Gerenciar Jogo")
     print('==========================')
     opc = input("Escolha uma opção: ")
 
