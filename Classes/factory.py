@@ -8,22 +8,22 @@ from Classes.Personagem import Personagem
 
 class RpgObjectFactory:
     @staticmethod
-    def criar_item(nome, peso, preco, descricao, raridade, tipo):
+    def criarItem(nome, peso, preco, descricao, raridade, tipo):
         return Item(nome, peso, preco, descricao, raridade, tipo)
     
     @staticmethod
-    def criar_arma(item, dano, durabilidade, nivel):
+    def criarArma(item, dano, durabilidade, nivel):
         return Arma(item, dano, durabilidade, nivel)
     
     @staticmethod
-    def criar_classe(nome, arma_unica, descricao):
+    def criarClasse(nome, arma_unica, descricao):
         return Classe(nome, arma_unica, descricao)
     
     @staticmethod
-    def criar_raca(atributo_unico, nome, debuff, descricao, forca, vigor, inteligencia, sorte, destreza, mana, stamina):
+    def criarRaca(atributo_unico, nome, debuff, descricao, forca, vigor, inteligencia, sorte, destreza, mana, stamina):
         return Raca(atributo_unico, nome, debuff, descricao,
                     forca, vigor, inteligencia, sorte, destreza, mana, stamina)
     
     @staticmethod
-    def criar_personagem(nome, altura, sexo, nivel, idade, classe, raca, inventario):
+    def criarPersonagem(nome, altura, sexo, nivel, idade, classe, raca, inventario):
         return Personagem(nome, altura, sexo, nivel, idade, classe, raca, inventario)

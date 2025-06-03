@@ -1,14 +1,8 @@
 import sys
 import os
 
-from Classes.Item import Item
-from Classes.Arma import Arma
-from Classes.Classe import Classe
-from Classes.Raca import Raca
-from Classes.Personagem import Personagem
 from Classes.Inventario import Inventario
-
-from Classes.factory import RpgObjectFactory  # Importando a factory
+from Classes.factory import RpgObjectFactory
 
 personagens = []
 itens = []
@@ -127,7 +121,7 @@ def criarItem():
     descricao = input("Descrição: ")
     raridade = input("Raridade: ")
     tipo = input("Tipo: ")
-    item = RpgObjectFactory.criar_item(nome, peso, preco, descricao, raridade, tipo)
+    item = RpgObjectFactory.criarItem(nome, peso, preco, descricao, raridade, tipo)
     itens.append(item)
     print(f"Item '{nome}' criado e adicionado à lista de itens.")
 
@@ -147,7 +141,7 @@ def criarArma():
     durabilidade = int(input("Durabilidade: "))
     nivel = int(input("Nível: "))
 
-    arma = RpgObjectFactory.criar_arma(itemSelecionado, dano, durabilidade, nivel)
+    arma = RpgObjectFactory.criarArma(itemSelecionado, dano, durabilidade, nivel)
     armas.append(arma)
     print(f"Arma '{arma.getNome()}' criada e associada ao item '{itemSelecionado.getNome()}'.")
 
@@ -156,7 +150,7 @@ def criarClasse():
     nome = input("Nome da classe: ")
     armaUnica = input("Arma única da classe: ")
     descricao = input("Descrição da classe: ")
-    classe = RpgObjectFactory.criar_classe(nome, armaUnica, descricao)
+    classe = RpgObjectFactory.criarClasse(nome, armaUnica, descricao)
     classes.append(classe)
     print(f"Classe '{nome}' criada e adicionada à lista de classes.")
 
@@ -180,7 +174,7 @@ def criarRaca():
         print("Entrada inválida. Usando valor padrão 0 para atributos.")
         forca = vigor = inteligencia = sorte = destreza = mana = stamina = 0
 
-    raca = RpgObjectFactory.criar_raca(atributoUnico, nome, debuff, descricao,
+    raca = RpgObjectFactory.criarRaca(atributoUnico, nome, debuff, descricao,
                                        forca, vigor, inteligencia, sorte, destreza, mana, stamina)
     racas.append(raca)
     print(f"Raça '{nome}' criada e adicionada à lista de raças.")
@@ -211,7 +205,7 @@ def criarPersonagem():
 
     inventario = Inventario(capacidade = 10)
 
-    personagem = RpgObjectFactory.criar_personagem(nome, altura, sexo, nivel, idade, classeSel, racaSel, inventario)
+    personagem = RpgObjectFactory.criarPersonagem(nome, altura, sexo, nivel, idade, classeSel, racaSel, inventario)
     personagens.append(personagem)
     print(f"Personagem '{nome}' criado com sucesso.")
 
